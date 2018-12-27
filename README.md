@@ -3,10 +3,10 @@
 
 ## Table of Contents
 
-- [Overview](#Overview)
-- [Reading Reddit's API](#Reading-Reddit's-API)
-- [Model Building](#Model-Building)
-- [Making the "Product"](#Making-the-"Product")
+- [Overview](##Overview)
+- [Reading Reddit's API](##Reading-Reddit's-API)
+- [Model Building](##Model-Building)
+- [Making the "Product"](##Making-the-"Product")
 
 
 ## Overview:
