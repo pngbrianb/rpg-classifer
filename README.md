@@ -4,9 +4,9 @@
 ## Table of Contents
 
 - [Overview](#Overview)
-- [Reading Reddit's API](#Reading Reddit's API)
-- [Model Building](#Model Building)
-- [Making the "Product"](#Making the "Product")
+- [Reading Reddit's API](#Reading_Reddit's_API)
+- [Model Building](#Model_Building)
+- [Making the "Product"](#Making_the_"Product")
 
 
 ## Overview:
