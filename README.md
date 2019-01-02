@@ -6,17 +6,17 @@
 - [Overview](#Overview)
 - [Reading Reddit's API](#Reading-Reddit's-API)
 - [Model Building](#Model-Building)
-- [Making the "Product"](#Making-the-"Product")
+- [Making the "Product"](#Making-the-Product)
 
 
-## Overview:
+## [Overview](#Overview):
 
 The objective of this project was to build a model that can distinguish whether a Role-Playing Game can be classified as Pen-and-Paper or Video Game, based only on text data from the game's subreddit. My process was as follows:
 1. gather and format data from [Reddit](https://www.reddit.com/) subs for [pen-and-paper](https://www.reddit.com/r/rpg/) and [video game](https://www.reddit.com/r/rpg_gamers/) RPGs.
 2. build and test models to predict whether which posts came from which subreddit
 3. write a python script to import the training data, rebuild the most accurate model, scrape and format the data from a subreddit, predict whether posts are closer to pen-and-paper or video game RPGs, then return which subreddit the mean of posts' predictions belong to (in use, a user calls the function on a subreddit in question, and the function tells them whether they're looking at a pen-and-paper or a video game RPG)
 
-## Reading Reddit's API
+## [Reading Reddit's API](#Reading-Reddit's-API)
 
 For each of the two subreddits in question:
 1. I used a ```For``` loop and Reddit's API (the ```'.json'``` extension) to extract all available json data from each of the [pen-and-paper RPG](https://www.reddit.com/r/rpg/) and [video game RPG](https://www.reddit.com/r/rpg_gamers/) subreddits and store that data as a list.
@@ -32,7 +32,7 @@ For each of the two subreddits in question:
 3. Iterating over the URLs in the DataFrames, I used Reddit's API to scrape all the text, if any, from the comments stores for a given entry. I added the data back into the appropriate working DataFrame.
 4. I exported the DataFrames into csv files so that I could work with the data without re-running my code over and over. I decided that 1000 posts with up to 50 comments each would be provide plenty of data from which we could train our models.
 
-## Model Building
+## [Model Building](#Model-Building)
 
 After reading in the training data csvs, I concatenated the dataframes and iterated over each row to combine the text from the post and all the comments into one long string.
 
@@ -40,6 +40,6 @@ Next I split the data into training and testing data, stratifying it to ensure t
 
 The first I ran was a Naive Bayes model, which predicted posts' subreddits 95% of the time. I also tested a VotingClassifier model which included KNeighborsClassifier, LogisticRegression, AdaBoostClassifier, and Naive Bayes as well. After testing with different voting weights and hyperparameters, the best scores I was able to reach were the same as the Naive Bayes model, which was understandably faster to compute! Finally, I tested a Random Forest model by itself, once again testing multiple hyperparameters by use of a GridSearchCV. The best score I reached using a RandomForest was 92.2%. Having run all these tests, I thus determined to utilize the Naive Bayes model for my final product.
 
-## Making the "Product"
+## [Making the "Product"](#Making-the-Product)
 
 My last step was to incoprorate all these steps into a single Python script. The [RPG-Classifier](RPG-Classifier.ipynb) file in this repository is an example of the function imported and run in a simple notebook. The function runs in just over 5 minutes due to the manual delays I wrote into the scraping code so as not to get 429 codes when hitting Reddit's API. I'm happy with the product anyway, however, as every test case I ran was successful.
