@@ -42,4 +42,4 @@ The first I ran was a Naive Bayes model, which predicted posts' subreddits 95% o
 
 ## Making the "Product"
 
-My last step was to incoprorate all these steps into a single Python script. The [RPG-Classifier](RPG-Classifier.ipynb) file in this repository is an example of the function imported and run in a simple notebook. The function runs in just over 5 minutes due to the manual delays I wrote into the scraping code so as not to get 429 codes when hitting Reddit's API. I'm happy with the product anyway, however, as every test case I ran was successful.
+My last step was to incoporate all these steps into a single Python script. The [RPG-Classifier](RPG-Classifier.ipynb) file in this repository is an example of the function imported and run in a simple notebook. The function runs in just over 5 minutes due to the manual delays I wrote into the scraping code so as not to get 429 codes when hitting Reddit's API. I'm happy with the product anyway, however, as every test case I ran was successful.
